@@ -2,8 +2,10 @@ import spacy
 from flask import Flask, render_template, jsonify, request
 
 from components import QueryProcessor, DocumentRetrieval, PassageRetrieval, AnswerExtractor, TextSuggestor
+import spacy.cli
 
 app = Flask(__name__)
+spacy.cli.download("en_core_web_lg")
 # SPACY_MODEL = os.environ.get('SPACY_MODEL', 'en_core_web_sm')
 # QA_MODEL = os.environ.get('QA_MODEL', 'distilbert-base-cased-distilled-squad')
 SPACY_MODEL = 'en_core_web_sm'
