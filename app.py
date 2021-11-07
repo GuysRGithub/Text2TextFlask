@@ -15,7 +15,7 @@ query_processor = QueryProcessor(nlp)
 document_retriever = DocumentRetrieval()
 passage_retriever = PassageRetrieval(nlp)
 answer_extractor = AnswerExtractor(QA_MODEL, QA_MODEL)
-text_suggesstor = TextSuggestor()
+# text_suggesstor = TextSuggestor()
 
 
 @app.route('/')
@@ -43,8 +43,8 @@ def suggest():
         return "Bad request", 400
     prompt = data.get('prompt')
 
-    suggestions = text_suggesstor.generate(prompt)
-    return jsonify(suggestions)
+    # suggestions = text_suggesstor.generate(prompt)
+    return jsonify("")
 
 
 if __name__ == '__main__':
