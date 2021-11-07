@@ -1,1 +1,1 @@
-web: gunicorn run:app
+web: gunicorn text2text-api:app
